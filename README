@@ -1,0 +1,28 @@
+HANDIN:
+Final handin
+
+DESIGN CHOICES:
+
+Two Types of Shapes:
+	I used rectangle and ellipse. These are basic and practical shapes, and SketchyShape methods are easily translated 
+	from one to the other. The major differences are how their locations are found and how the height and width are set.
+
+Two MouseHandlers:
+	I chose to use one MouseHandler for clicking and another for dragging. This enabled me to easily obtain necessary information
+	while implementing methods such as resize, create, rotate, translate. All of these methods depend on the current position of the 
+	mouse as it's dragged, but they also depend on where the initial click was. Two separate MouseHandlers prevented these two different
+	events from becoming entangled or confused.
+	
+Interfaces rather than abstract classes:
+	SketchyRect and SketchyEl have to implement both Saveable and SketchyShape, so an interface is preferable because it can support both of
+	these. An abstract class on the other hand, can only extend one class. In addition, SketchyShape and Saveable do not require any instance variables.
+	If they had, an abstract class might have been a better choice. 
+	
+
+I noticed that in the demo, if a shape is selected, and while the mouse is down, shift or control is pressed, then
+the shape will properly resize or rotate, but the actions are not pushed onto the undo stack. In my program, the user
+can only resize or rotate a shape if the keys were pressed prior to selecting the shape.
+
+
+KNOWN BUGS:
+No known bugs
